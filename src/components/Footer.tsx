@@ -1,6 +1,10 @@
 import { Github, Twitter, MessageCircle, FileText, Users, Shield } from "lucide-react";
+import { useState } from "react";
+import DocumentationModal from "@/components/DocumentationModal";
 
 const Footer = () => {
+  const [isDocsModalOpen, setIsDocsModalOpen] = useState(false);
+
   const footerLinks = {
     product: [
       { name: "About", href: "#" },
@@ -9,16 +13,16 @@ const Footer = () => {
       { name: "Roadmap", href: "#" }
     ],
     developers: [
-      { name: "Documentation", href: "#", icon: FileText },
-      { name: "API Reference", href: "#" },
+      { name: "Documentation", href: "#", icon: FileText, onClick: () => setIsDocsModalOpen(true) },
+      { name: "API Reference", href: "#", onClick: () => setIsDocsModalOpen(true) },
       { name: "Smart Contracts", href: "#" },
       { name: "GitHub", href: "#", icon: Github }
     ],
     community: [
-      { name: "Discord", href: "#", icon: MessageCircle },
-      { name: "Twitter", href: "#", icon: Twitter },
+      { name: "Discord", href: "https://discord.com/invite/YnGKP7d3vS", icon: MessageCircle },
+      { name: "Twitter", href: "https://x.com/0xPolygon", icon: Twitter },
       { name: "Governance", href: "#", icon: Users },
-      { name: "Blog", href: "#" }
+      { name: "Blog", href: "https://polygon.technology/blog" }
     ],
     legal: [
       { name: "Privacy Policy", href: "#", icon: Shield },
@@ -30,11 +34,16 @@ const Footer = () => {
 
   const socialLinks = [
     { name: "GitHub", href: "#", icon: Github },
-    { name: "Twitter", href: "#", icon: Twitter },
-    { name: "Discord", href: "#", icon: MessageCircle }
+    { name: "Twitter", href: "https://x.com/0xPolygon", icon: Twitter },
+    { name: "Discord", href: "https://discord.com/invite/YnGKP7d3vS", icon: MessageCircle }
   ];
 
   return (
+    <>
+      <DocumentationModal 
+        isOpen={isDocsModalOpen} 
+        onClose={() => setIsDocsModalOpen(false)} 
+      />
     <footer className="bg-card/50 border-t border-border">
       <div className="container mx-auto px-6">
         {/* Main Footer Content */}
@@ -60,6 +69,8 @@ const Footer = () => {
                     key={social.name}
                     href={social.href}
                     className="w-10 h-10 bg-muted/50 hover:bg-primary/20 rounded-lg flex items-center justify-center transition-colors duration-300 group"
+                    target={social.href.startsWith('http') ? '_blank' : '_self'}
+                    rel={social.href.startsWith('http') ? 'noopener noreferrer' : undefined}
                   >
                     <social.icon className="h-5 w-5 text-muted-foreground group-hover:text-primary" />
                   </a>
@@ -86,10 +97,20 @@ const Footer = () => {
               <ul className="space-y-3">
                 {footerLinks.developers.map((link) => (
                   <li key={link.name}>
-                    <a href={link.href} className="text-muted-foreground hover:text-primary transition-colors duration-300 flex items-center gap-2">
-                      {link.icon && <link.icon className="h-4 w-4" />}
-                      {link.name}
-                    </a>
+                    {link.onClick ? (
+                      <button 
+                        onClick={link.onClick}
+                        className="text-muted-foreground hover:text-primary transition-colors duration-300 flex items-center gap-2 text-left"
+                      >
+                        {link.icon && <link.icon className="h-4 w-4" />}
+                        {link.name}
+                      </button>
+                    ) : (
+                      <a href={link.href} className="text-muted-foreground hover:text-primary transition-colors duration-300 flex items-center gap-2">
+                        {link.icon && <link.icon className="h-4 w-4" />}
+                        {link.name}
+                      </a>
+                    )}
                   </li>
                 ))}
               </ul>
@@ -100,7 +121,12 @@ const Footer = () => {
               <ul className="space-y-3">
                 {footerLinks.community.map((link) => (
                   <li key={link.name}>
-                    <a href={link.href} className="text-muted-foreground hover:text-primary transition-colors duration-300 flex items-center gap-2">
+                    <a 
+                      href={link.href} 
+                      className="text-muted-foreground hover:text-primary transition-colors duration-300 flex items-center gap-2"
+                      target={link.href.startsWith('http') ? '_blank' : '_self'}
+                      rel={link.href.startsWith('http') ? 'noopener noreferrer' : undefined}
+                    >
                       {link.icon && <link.icon className="h-4 w-4" />}
                       {link.name}
                     </a>
@@ -136,6 +162,7 @@ const Footer = () => {
         </div>
       </div>
     </footer>
+    </>
   );
 };
 

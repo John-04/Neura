@@ -1,9 +1,18 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Play } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import heroNetworkBg from "@/assets/hero-network-bg.jpg";
+import { useState } from "react";
+import EmailSignupModal from "@/components/EmailSignupModal";
 
 const HeroSection = () => {
+  const [isSignupModalOpen, setIsSignupModalOpen] = useState(false);
+
   return (
+    <>
+      <EmailSignupModal 
+        isOpen={isSignupModalOpen} 
+        onClose={() => setIsSignupModalOpen(false)} 
+      />
     <section className="min-h-screen flex items-center justify-center network-bg relative overflow-hidden">
       {/* Background Image */}
       <div 
@@ -54,14 +63,13 @@ const HeroSection = () => {
           </p>
           
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-float-up animation-delay-600">
-            <Button className="btn-hero group">
+          <div className="flex justify-center animate-float-up animation-delay-600">
+            <Button 
+              className="btn-hero group"
+              onClick={() => setIsSignupModalOpen(true)}
+            >
               Join the Waitlist
               <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
-            </Button>
-            <Button variant="outline" className="btn-hero-secondary group">
-              <Play className="mr-2 h-5 w-5" />
-              View the Demo
             </Button>
           </div>
           
@@ -90,6 +98,7 @@ const HeroSection = () => {
         </div>
       </div>
     </section>
+    </>
   );
 };
 

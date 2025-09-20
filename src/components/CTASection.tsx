@@ -1,8 +1,17 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Sparkles } from "lucide-react";
+import { useState } from "react";
+import EmailSignupModal from "@/components/EmailSignupModal";
 
 const CTASection = () => {
+  const [isSignupModalOpen, setIsSignupModalOpen] = useState(false);
+
   return (
+    <>
+      <EmailSignupModal 
+        isOpen={isSignupModalOpen} 
+        onClose={() => setIsSignupModalOpen(false)} 
+      />
     <section className="py-20 network-bg relative overflow-hidden">
       {/* Animated background elements */}
       <div className="absolute inset-0">
@@ -51,7 +60,10 @@ const CTASection = () => {
           
           {/* CTA Button */}
           <div className="animate-scale-in animation-delay-1000">
-            <Button className="btn-hero text-xl px-12 py-6 group">
+            <Button 
+              className="btn-hero text-xl px-12 py-6 group"
+              onClick={() => setIsSignupModalOpen(true)}
+            >
               Sign Up for Early Access
               <ArrowRight className="ml-3 h-6 w-6 transition-transform group-hover:translate-x-1" />
             </Button>
@@ -75,6 +87,7 @@ const CTASection = () => {
         </div>
       </div>
     </section>
+    </>
   );
 };
 
