@@ -206,9 +206,11 @@ const DocumentationModal: React.FC<DocumentationModalProps> = ({ isOpen, onClose
             <div className="pt-6 border-t border-border">
               <h3 className="text-lg font-semibold mb-3">Contact & Support</h3>
               <div className="flex gap-4">
-                <Button variant="outline" size="sm">
-                  <ExternalLink className="h-4 w-4 mr-2" />
-                  Discord Support
+                <Button variant="outline" size="sm" asChild>
+                  <a href="https://discord.gg/q2297BsW" target="_blank" rel="noopener noreferrer">
+                    <ExternalLink className="h-4 w-4 mr-2" />
+                    Discord Support
+                  </a>
                 </Button>
                 <Button variant="outline" size="sm">
                   <ExternalLink className="h-4 w-4 mr-2" />

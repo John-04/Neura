@@ -19,9 +19,9 @@ const Footer = () => {
       { name: "GitHub", href: "#", icon: Github }
     ],
     community: [
-      { name: "Discord", href: "https://discord.com/invite/YnGKP7d3vS", icon: MessageCircle },
+      { name: "Discord", href: "https://discord.gg/q2297BsW", icon: MessageCircle },
       { name: "Twitter", href: "https://x.com/0xPolygon", icon: Twitter },
-      { name: "Governance", href: "#", icon: Users },
+      { name: "Governance", href: "https://governance.polygon.technology/", icon: Users },
       { name: "Blog", href: "https://polygon.technology/blog" }
     ],
     legal: [
@@ -35,7 +35,7 @@ const Footer = () => {
   const socialLinks = [
     { name: "GitHub", href: "#", icon: Github },
     { name: "Twitter", href: "https://x.com/0xPolygon", icon: Twitter },
-    { name: "Discord", href: "https://discord.com/invite/YnGKP7d3vS", icon: MessageCircle }
+    { name: "Discord", href: "https://discord.gg/q2297BsW", icon: MessageCircle }
   ];
 
   return (
