@@ -1,6 +1,5 @@
 # Neura – AI-Enhanced DeFi Aggregator on Polygon
 
-![Neura Logo](./assets/logo.png)
 
 ## 📖 Overview
 Neura is an AI-enhanced, automated DeFi aggregator designed for the Polygon ecosystem. It pools user funds into smart vaults that automatically rebalance across protocols like **Aave**, **QuickSwap**, and **Balancer** to deliver the highest sustainable yields. By fusing AI-driven strategy selection with transparent on-chain governance, Neura reduces risk, optimizes returns, and makes yield farming accessible to mainstream users.
@@ -219,11 +218,11 @@ MIT License – see [LICENSE](./LICENSE) file for details.
 
 ## 🌐 Links
 
-* [Website](https://neura.finance)
-* [Docs](https://docs.neura.finance)
+* [Website](https://neuraapp.netlify.app/)
+* [Docs](https://neuraapp.netlify.app/)
 * [Polygon](https://polygon.technology)
-* [Twitter/X](https://twitter.com/NeuraFi)
-* [Discord](https://discord.gg/neura)
+* [Twitter/X](https://x.com/0xPolygon)
+* [Discord](https://discord.com/invite/q2297BsW)
 
 ```
 
