@@ -28,12 +28,6 @@ const TeamSection = () => {
     }
   ];
 
-  const backers = [
-    { name: "Polygon Ventures", logo: "🔷" },
-    { name: "Framework Ventures", logo: "🟪" },
-    { name: "Coinbase Ventures", logo: "🔵" },
-    { name: "Binance Labs", logo: "🟡" }
-  ];
 
   return (
     <section className="py-20 bg-card/30">
@@ -107,49 +101,6 @@ const TeamSection = () => {
             ))}
           </div>
 
-          {/* Backing & Grants */}
-          <div className="text-center">
-            <h3 className="text-responsive-lg mb-8 animate-slide-in-left animation-delay-800">
-              Backed By
-            </h3>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
-              {backers.map((backer, index) => (
-                <div 
-                  key={backer.name}
-                  className="card-glow animate-scale-in flex flex-col items-center gap-3"
-                  style={{ animationDelay: `${(index + 5) * 150}ms` }}
-                >
-                  <div className="text-3xl">{backer.logo}</div>
-                  <div className="font-semibold text-sm text-center">{backer.name}</div>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Grant Milestone Info */}
-          <div className="mt-16 max-w-3xl mx-auto">
-            <div className="card-glow text-center animate-float-up animation-delay-1200">
-              <h3 className="text-feature-title mb-4">Development Timeline</h3>
-              <p className="text-muted-foreground mb-6">
-                Neura is currently in development with funding from Polygon's ecosystem grants program.
-                Our 6-week roadmap includes protocol integrations, AI model training, and security audits.
-              </p>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
-                <div>
-                  <div className="font-semibold text-primary mb-1">Weeks 1-2</div>
-                  <div className="text-muted-foreground">Smart contract development</div>
-                </div>
-                <div>
-                  <div className="font-semibold text-accent mb-1">Weeks 3-4</div>
-                  <div className="text-muted-foreground">AI model integration</div>
-                </div>
-                <div>
-                  <div className="font-semibold text-success mb-1">Weeks 5-6</div>
-                  <div className="text-muted-foreground">Security audits & launch</div>
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
     </section>
