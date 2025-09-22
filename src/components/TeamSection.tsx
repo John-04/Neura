@@ -1,53 +1,30 @@
 import { Linkedin, Github, Twitter } from "lucide-react";
+import stephanieImage from "@/assets/stephanie-nwankwo.jpg";
+import johnImage from "@/assets/john-fashola.jpg";
 
 const TeamSection = () => {
   const teamMembers = [
     {
-      name: "Alex Chen",
-      role: "CEO & Co-Founder",
-      bio: "Former quantitative trader at Goldman Sachs with 8+ years in traditional finance and DeFi.",
-      image: "👨‍💼",
+      name: "Stephanie Nwankwo",
+      role: "Co-Founder",
+      bio: "Blockchain developer and tech innovator with expertise in decentralized systems and smart contract development.",
+      image: stephanieImage,
       social: {
-        linkedin: "#",
-        twitter: "#",
-        github: "#"
+        linkedin: "https://www.linkedin.com/in/nwankwo-stephanie/",
+        twitter: "https://x.com/iamtechhunter",
+        github: "https://github.com/GoSTEAN"
       }
     },
     {
-      name: "Sarah Kim",
-      role: "CTO & Co-Founder", 
-      bio: "Ex-Google AI researcher specializing in machine learning and blockchain infrastructure.",
-      image: "👩‍💻",
+      name: "John Fashola",
+      role: "Co-Founder", 
+      bio: "Data analyst and blockchain strategist focused on DeFi protocols and yield optimization strategies.",
+      image: johnImage,
       social: {
-        linkedin: "#",
-        twitter: "#",
-        github: "#"
+        linkedin: "https://www.linkedin.com/in/john-fashola-67a149228/",
+        twitter: "https://x.com/John_TheAnalyst",
+        github: "https://github.com/John-04"
       }
-    },
-    {
-      name: "Marcus Rodriguez",
-      role: "Head of DeFi Strategy",
-      bio: "Previously led yield optimization at Yearn Finance, expert in protocol integrations.",
-      image: "👨‍🚀",
-      social: {
-        linkedin: "#",
-        twitter: "#"
-      }
-    }
-  ];
-
-  const advisors = [
-    {
-      name: "Dr. Emily Watson",
-      role: "AI Advisor",
-      company: "Stanford AI Lab",
-      image: "👩‍🔬"
-    },
-    {
-      name: "David Park",
-      role: "DeFi Advisor", 
-      company: "Former Aave Core",
-      image: "👨‍🎓"
     }
   ];
 
@@ -73,14 +50,20 @@ const TeamSection = () => {
           </div>
 
           {/* Core Team */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16 max-w-4xl mx-auto">
             {teamMembers.map((member, index) => (
               <div 
                 key={member.name}
                 className="card-feature animate-scale-in group text-center"
                 style={{ animationDelay: `${index * 200}ms` }}
               >
-                <div className="text-6xl mb-4">{member.image}</div>
+                <div className="w-24 h-24 mx-auto mb-4 rounded-full overflow-hidden">
+                  <img 
+                    src={member.image} 
+                    alt={member.name}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
                 <h3 className="text-feature-title mb-2 group-hover:text-primary transition-colors duration-300">
                   {member.name}
                 </h3>
@@ -90,46 +73,38 @@ const TeamSection = () => {
                 </p>
                 <div className="flex justify-center gap-3">
                   {member.social.linkedin && (
-                    <a href={member.social.linkedin} className="w-8 h-8 bg-muted/50 hover:bg-primary/20 rounded-lg flex items-center justify-center transition-colors duration-300 group">
+                    <a 
+                      href={member.social.linkedin} 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="w-8 h-8 bg-muted/50 hover:bg-primary/20 rounded-lg flex items-center justify-center transition-colors duration-300 group"
+                    >
                       <Linkedin className="h-4 w-4 text-muted-foreground group-hover:text-primary" />
                     </a>
                   )}
                   {member.social.twitter && (
-                    <a href={member.social.twitter} className="w-8 h-8 bg-muted/50 hover:bg-primary/20 rounded-lg flex items-center justify-center transition-colors duration-300 group">
+                    <a 
+                      href={member.social.twitter} 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="w-8 h-8 bg-muted/50 hover:bg-primary/20 rounded-lg flex items-center justify-center transition-colors duration-300 group"
+                    >
                       <Twitter className="h-4 w-4 text-muted-foreground group-hover:text-primary" />
                     </a>
                   )}
                   {member.social.github && (
-                    <a href={member.social.github} className="w-8 h-8 bg-muted/50 hover:bg-primary/20 rounded-lg flex items-center justify-center transition-colors duration-300 group">
+                    <a 
+                      href={member.social.github} 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="w-8 h-8 bg-muted/50 hover:bg-primary/20 rounded-lg flex items-center justify-center transition-colors duration-300 group"
+                    >
                       <Github className="h-4 w-4 text-muted-foreground group-hover:text-primary" />
                     </a>
                   )}
                 </div>
               </div>
             ))}
-          </div>
-
-          {/* Advisors */}
-          <div className="text-center mb-12">
-            <h3 className="text-responsive-lg mb-8 animate-slide-in-left animation-delay-600">
-              Strategic Advisors
-            </h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto">
-              {advisors.map((advisor, index) => (
-                <div 
-                  key={advisor.name}
-                  className="card-glow animate-scale-in flex items-center gap-4"
-                  style={{ animationDelay: `${(index + 3) * 200}ms` }}
-                >
-                  <div className="text-4xl">{advisor.image}</div>
-                  <div className="text-left">
-                    <div className="font-semibold text-foreground">{advisor.name}</div>
-                    <div className="text-primary text-sm">{advisor.role}</div>
-                    <div className="text-muted-foreground text-sm">{advisor.company}</div>
-                  </div>
-                </div>
-              ))}
-            </div>
           </div>
 
           {/* Backing & Grants */}
