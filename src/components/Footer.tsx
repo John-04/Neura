@@ -106,7 +106,12 @@ const Footer = () => {
                         {link.name}
                       </button>
                     ) : (
-                      <a href={link.href} className="text-muted-foreground hover:text-primary transition-colors duration-300 flex items-center gap-2">
+                      <a 
+                        href={link.href} 
+                        className="text-muted-foreground hover:text-primary transition-colors duration-300 flex items-center gap-2"
+                        target={link.href.startsWith('http') ? '_blank' : '_self'}
+                        rel={link.href.startsWith('http') ? 'noopener noreferrer' : undefined}
+                      >
                         {link.icon && <link.icon className="h-4 w-4" />}
                         {link.name}
                       </a>
