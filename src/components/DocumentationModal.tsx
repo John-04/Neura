@@ -46,9 +46,11 @@ const DocumentationModal: React.FC<DocumentationModalProps> = ({ isOpen, onClose
                     <Download className="h-4 w-4 mr-2" />
                     PDF
                   </Button>
-                  <Button variant="outline" size="sm">
-                    <ExternalLink className="h-4 w-4 mr-2" />
-                    GitHub
+                  <Button variant="outline" size="sm" asChild>
+                    <a href="https://github.com/John-04/Neura" target="_blank" rel="noopener noreferrer">
+                      <ExternalLink className="h-4 w-4 mr-2" />
+                      GitHub
+                    </a>
                   </Button>
                 </div>
               </div>
@@ -212,9 +214,11 @@ const DocumentationModal: React.FC<DocumentationModalProps> = ({ isOpen, onClose
                     Discord Support
                   </a>
                 </Button>
-                <Button variant="outline" size="sm">
-                  <ExternalLink className="h-4 w-4 mr-2" />
-                  GitHub Issues
+                <Button variant="outline" size="sm" asChild>
+                  <a href="https://github.com/John-04/Neura/issues" target="_blank" rel="noopener noreferrer">
+                    <ExternalLink className="h-4 w-4 mr-2" />
+                    GitHub Issues
+                  </a>
                 </Button>
               </div>
             </div>

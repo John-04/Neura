@@ -16,7 +16,7 @@ const Footer = () => {
       { name: "Documentation", href: "#", icon: FileText, onClick: () => setIsDocsModalOpen(true) },
       { name: "API Reference", href: "#", onClick: () => setIsDocsModalOpen(true) },
       { name: "Smart Contracts", href: "#" },
-      { name: "GitHub", href: "#", icon: Github }
+      { name: "GitHub", href: "https://github.com/John-04/Neura", icon: Github }
     ],
     community: [
       { name: "Discord", href: "https://discord.gg/q2297BsW", icon: MessageCircle },
@@ -33,7 +33,7 @@ const Footer = () => {
   };
 
   const socialLinks = [
-    { name: "GitHub", href: "#", icon: Github },
+    { name: "GitHub", href: "https://github.com/John-04/Neura", icon: Github },
     { name: "Twitter", href: "https://x.com/0xPolygon", icon: Twitter },
     { name: "Discord", href: "https://discord.gg/q2297BsW", icon: MessageCircle }
   ];
