@@ -6,7 +6,7 @@ const TeamSection = () => {
   const teamMembers = [
     {
       name: "Stephanie Nwankwo",
-      role: "Co-Founder",
+      role: "Founder",
       bio: "Blockchain developer and tech innovator with expertise in decentralized systems and smart contract development.",
       image: stephanieImage,
       social: {
